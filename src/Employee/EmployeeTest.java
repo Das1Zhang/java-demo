@@ -1,4 +1,4 @@
-import java.io.*;
+package Employee;
 
 public class EmployeeTest {
     public static void main(String[] args){
