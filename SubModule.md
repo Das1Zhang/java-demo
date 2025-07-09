@@ -1,5 +1,10 @@
 > 本人在写 CS61B sp21 的过程中发现使用 git add 一直无法实现对 library-sp21 这个文件夹的跟踪，于是又重新了解了一下git 的工作原理，知道了git中的**子模块机制**
 
+# 我遇到的问题
+![](https://132-1331126615.cos.ap-guangzhou.myqcloud.com/library-sp21.jpg)
+在主仓库目录中使用 `git add` 会发现无论如何都无法跟踪到 `library-sp21`.
+(Ubuntu 里的微信截图出来不知道为啥这么糊。。。。)
+
 # 什么是子模块？
 > 子模块(submodule) 是什么？我手动创建一个文件夹算子模块吗？？？
 
