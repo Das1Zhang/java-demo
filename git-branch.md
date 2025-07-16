@@ -48,11 +48,15 @@ git branch -a
 ```
 可以查看本地以及远程仓库的所有分支情况
 ### 查看当前分支
-上面两个分支情况中在分支前有`*`的就是当前分支
+上面两个分支情况中在分支前有`*`的就是当前分支，例如：
+![git-branch](https://132-1331126615.cos.ap-guangzhou.myqcloud.com/gitbranch.png)
+在上面的图中可以看到我们这个本地仓库所处的分支为`my-feature`
+在远程仓库中的分支情况也为我们列举出来了（红色）
 或者运行：
 ```bash
 git status
 ```
-也可以查看当前处于哪个分支
+![git-status](https://132-1331126615.cos.ap-guangzhou.myqcloud.com/gitstatus.png)
+也可以查看当前处于哪个分支，这里就显示了`On branch my-feature`，告诉我们在`my-feature`分支上
 命令行中一般也有显示。
 
