@@ -6,7 +6,7 @@
 - 无环的
 - 涉及到了所有的结点
 比如这样一张图
-![alt text](image-14.png)
+![alt text](https://132-1331126615.cos.ap-guangzhou.myqcloud.com/MST.png)
 这样的一组边构成的树，称为生成树
 而让这个树中所有的**边权重之和最小**即为最小生成树
 
@@ -15,7 +15,7 @@
 - 一个 cut 就是将一个图中的结点分成两个非空集合
 - 一个 crossing cut 就是从一个集合结点连接到了另一个集合结点的边
 割边属性是这样描述的：给定任意一个 cut，最小权重的 crossing edge 一定在最小生成树中
-![alt text](image-15.png)
+![alt text](https://132-1331126615.cos.ap-guangzhou.myqcloud.com/CutProperty.png)
 比如上面这张图中，所有的红色边都是 crossing edge，其中最小的边一定在最小生成树中
 我们判断 crossing edge 只需要看这个边**是否连接了两个属于不同集合（也就是不同颜色）的结点**即可
 
@@ -35,7 +35,7 @@
 从一个随机结点开始：
 - 将一个**一头连接已经在MST中结点的最短的边**，加入MST,直到 V-1 条边
 
-![alt text](image-16.png)
+![alt text](https://132-1331126615.cos.ap-guangzhou.myqcloud.com/Prim.png)
 比如在这个图中，所有符合上述条件的即为红色的边：连接了一个在MST中的结点
 然后我们选取这些边中最短的边，也就是A->B或者E->D
 
@@ -47,7 +47,7 @@ Prim 算法是可以奏效的，但效率太低了，因为你必须考虑大量
 - 将所有结点放入 fringe PQ 中，以结点到树的距离作为排序标准
 - 重复：将距离树最近的结点移出，然后将其指出的所有边进行relaxation，然后对 distTo 和 edgeTo 数组进行更新
 
-![alt text](image-17.png)
+![alt text](https://132-1331126615.cos.ap-guangzhou.myqcloud.com/OptimizedPrim.png)
 这个图中我们刚刚把距离树最近的结点E移出，加入到MST中，然后relax它的所有的边，同时更新 distTo 和 edgeTo 数组
 
 图中**加粗的边为MST中的边**，图中的虚**线表示relax出来的边，作为MST的候选边**，如果在relax中发现**这条边不如之前的边**（比如C->B），或者这条边被后续的边所取代（比如下一步的C->F即将被E->F取代），那么这条边我们甚至不标注为虚线
@@ -102,7 +102,7 @@ Kruskal 算法计算过程中创造出的MST可能是割裂不连续的，但是
 - WQU 加权快速集合：帮助我们判断是否有环生成
 - MST ：统计最小生成树的边
 
-![alt text](image-18.png)
+![alt text](https://132-1331126615.cos.ap-guangzhou.myqcloud.com/Kruskal.png)
 在这个图中我们按顺序从 Fringe 中取出对应的边，当我们即将取出E->B这条边时，WQU告诉我们已经有了一条从E到B的路径，也就是下一步即将成环，所以我们不考虑E->B这条边
 
 ### 算法实现

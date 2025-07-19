@@ -2,7 +2,7 @@
 
 # 拓扑排序
 考虑这样一个**有向无环图**：
-![alt text](image-19.png)
+![alt text](https://132-1331126615.cos.ap-guangzhou.myqcloud.com/TopoSort.png)
 这其中的有效排序为有：
 - [A,C,B,D,F,E,H,G]
 - [C,A,D,F,B,E,G,H]
@@ -23,7 +23,7 @@ DFS先从较浅的结点开始，然后逐渐深入，比如从A到H，后序将
 
 # 为什么这被称作排序呢？
 对于上面这个图如果我们把他进行一些拖拽处理，会发现：
-![alt text](image-20.png)
+![alt text](https://132-1331126615.cos.ap-guangzhou.myqcloud.com/Toposort1.png)
 会发现这个图变成一个所**有箭头都指向右边的带有某种顺序的图**，这就是我们**“做事”的顺序**
 
 # 如果有环怎么办？

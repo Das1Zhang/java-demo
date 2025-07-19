@@ -40,3 +40,6 @@ curl www.google.com
 比如我看到了这一坨形似乱码的文件：
 ![alt text](https://132-1331126615.cos.ap-guangzhou.myqcloud.com/curlGoogle.png)
 其实这样我们已经成功访问到了google
+### 注意
+使用`ping`命令有可能会导致ping不通的情况发生，这是因为`ping`使用的使ICMP协议，而Clash、shadowsocks、V2Ray等代理软件只处理TCP/UDP（尤其是HTTP,HTTPS,Socks）流量
+所以即使已经设置了代理，也可能发生ping不通的情况
