@@ -117,7 +117,7 @@ BFS 对于茂盛的图表现得很坏
 # 考虑权重
 > 如果图中每条路径都有权重，比如谷歌地图中我们想找到距离目的地最近的路线呢
 
-![alt text](image-5.png)
+![alt text](https://132-1331126615.cos.ap-guangzhou.myqcloud.com/BFS.png)
 我们会发现只考虑边数是不够的，这样会得出错误的答案，每条边具有对应的长度，也就是权重，这时我们应该采用什么算法呢
 
 ## 最短路径树
@@ -129,15 +129,15 @@ BFS 对于茂盛的图表现得很坏
 让我们先看三种坏算法，来引入Dijkstra
 #### 1.BFS
 不考虑权重直接将没有见过的结点加入树中
-![](image-6.png)
+![](https://132-1331126615.cos.ap-guangzhou.myqcloud.com/BFS1.png)
 显然这是一个坏算法，构造出了一个错误的SPT,这是因为我们从A开始，直接把BC都加入了树中，这个只考虑node问题，没有见过的node直接加入
 
 #### 2.虚拟结点
 我们把所有路径上的权重看作为一个个虚拟结点：
-![](image-7.png)
+![](https://132-1331126615.cos.ap-guangzhou.myqcloud.com/VirtualVertices.png)
 该算法按照距离起点的远近来将对应的结点加入树，考虑distance的问题，也就是最好优先，这里已经开始触及最核心的部分了
 但是我们为什么也不用这个算法呢：
-![](image-8.png)
+![](https://132-1331126615.cos.ap-guangzhou.myqcloud.com/VirtualVertices1.png)
 我们不会创造这么多个虚拟结点
 
 #### 3.best first
@@ -145,7 +145,7 @@ BFS 对于茂盛的图表现得很坏
 - 将最近的结点移出，然后进行标记
 - 对于每个出边 v->w : 如果 w 不再 SPT中，那么加入这条边，然后将 w 加入fringe
 这个算法有什么问题呢：
-![alt text](image-9.png)
+![alt text](https://132-1331126615.cos.ap-guangzhou.myqcloud.com/BestFirst.png)
 我们会发现，他会先把 A->B 加入SPT中，但后续我们考虑 C->B时就会直接跳过他
 这个算法中给出的第一个解法太强势了，即使后面的解法更好，他也不做考虑，像一个顽固的老头！
 
@@ -156,7 +156,7 @@ BFS 对于茂盛的图表现得很坏
 
 我们会借助一个优先队列PQ，将所有的结点加入PQ，根据到起点的距离排序，然后重复：
 - 将最近的结点 v 从 PQ 移出，然后 "relax" 从 v 指出的所有边
-![alt text](image-10.png)
+![alt text](https://132-1331126615.cos.ap-guangzhou.myqcloud.com/Dijkstra.png)
 在这个图中我们的流程是：
 1. 所有结点的dist设置为无穷大
 2. 从A开始
@@ -199,5 +199,5 @@ BFS 对于茂盛的图表现得很坏
 ### 重要性质
 - 总是从起点开始按距离访问结点
 - relaxation在每次边指向已经访问过的结点的时候都会失败
-![alt text](image-11.png)
+![alt text](https://132-1331126615.cos.ap-guangzhou.myqcloud.com/DijkstraInvariable.png)
 看上面这个图就很好理解了
