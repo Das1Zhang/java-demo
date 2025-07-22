@@ -20,7 +20,7 @@
 所以我们可以**先满足其中一个，然后对另一个做修正**
 
 比如：
-![alt text](image.png)
+![alt text](https://132-1331126615.cos.ap-guangzhou.myqcloud.com/heap1.png)
 我在这个堆中添加一个 3 结点，首先我让其满足完全性，也就是把 3 结点添加到最左下角的部分
 
 然后我们对这个最小堆性质做修正
@@ -32,11 +32,11 @@
 
 ## 删除结点
 我们以删除根结点为例
-![alt text](image-1.png)
+![alt text](https://132-1331126615.cos.ap-guangzhou.myqcloud.com/heap2.png)
 我们还是按照一样的思路，先满足完全性，再满足最小堆性质
 我们想要删除根结点 1, 我们取“最后一个结点”，也就是最右边的叶子结点，将其放到根结点的位置
 这个堆会变成这样：
-![alt text](image-2.png)
+![alt text](https://132-1331126615.cos.ap-guangzhou.myqcloud.com/heap3.png)
 
 现在我们要逐步将其进行修正
 现在这个根结点太大了，我们要将**其逐渐“下沉”**
@@ -52,7 +52,7 @@
 # 如何在java中表示堆
 得益于堆的完全性，我们知道，最后一层以上的所有层的结点数是有规律的："1,2,4,8..."
 如果我们按顺序对每个结点进行编号，我们可以写出`parents[]`数组
-![alt text](image-3.png)
+![alt text](https://132-1331126615.cos.ap-guangzhou.myqcloud.com/parent.png)
 我们可以得到这样的求`parent`的方法：
 ```java
 public int parent(int k){
@@ -66,7 +66,7 @@ public int parent(int k){
 - `parent(k) = k/2`
 
 # 不同数据结构实现优先队列时间复杂度分析
-![alt text](image-4.png)
+![alt text](https://132-1331126615.cos.ap-guangzhou.myqcloud.com/PQtime.png)
 其中对于 **Bushy BST** 来说，如果有**相同优先级的元素会很难处理**
 
 # 堆排序
@@ -106,7 +106,7 @@ public int parent(int k){
    3. 其余元素**重排为最大堆**
 4. 直到全部已排序完毕
 
-![alt text](image-6.png)
+![alt text](https://132-1331126615.cos.ap-guangzhou.myqcloud.com/heap5.png)
 比如这个数组，我们每次选择第一个元素，将其放到末尾，然后对剩余元素进行重排，并重复这个操作即可
 ## 堆排序时间复杂度分析
 - 向上构造最大堆：O(N logN)——N 个结点每个执行`sink`为logN,即N * logN
@@ -114,4 +114,4 @@ public int parent(int k){
 - 移除最大元素并重排：O(log N)
 
 ## 堆排序与选择排序比较
-![alt text](image-5.png)
+![alt text](https://132-1331126615.cos.ap-guangzhou.myqcloud.com/HeapandInsert.png)
