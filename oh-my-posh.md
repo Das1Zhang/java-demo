@@ -5,7 +5,7 @@ Windows Terminal 可以在 Microsoft store 中直接搜索下载，win11用户�
 
 Windows Terminal 会**默认加载 powershell**，当然我们也可以使用其他的shell，比如zsh等等
 
-# 安装oh-my-posh
+# 安装 oh-my-posh
 ## 安装 winget（可选）
 在powershell中输入：
 ```cmd
@@ -127,7 +127,7 @@ Set-PSReadLineOption -PredictionViewStyle InlineView
 ```
 可以启用**基于历史的语法建议模块**
 
-# 设置语法高亮
+# 设置语法高亮（设置字体颜色）
 ```json
 Set-PSReadLineOption -Colors @{
     "Command" = [ConsoleColor]::Green
